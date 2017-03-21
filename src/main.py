@@ -3,7 +3,6 @@ from movie import *
 from analyzer import *
 
 
-movie = Movie()
 movie_0 = Movie()
 analyzer = Analyzer()
 user = User()

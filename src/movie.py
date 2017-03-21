@@ -3,10 +3,10 @@ class Movie():
     def __init__(self):
         self.action = False
         self.romance = False
-        self.actiontime = 0
-        self.romancetime = 0
+        self.action_time = 0
+        self.romance_time = 0
 
-    def makeinfo(self):
+    def make_info(self):
         if self.action:
             print("这是动作电影\n")
         elif self.romance:

@@ -13,13 +13,12 @@ class Analyzer():
 
         if self.flag == 'A':
             movie.action = True
-            movie.romance = False
-            return movie
+
         elif self.flag == 'R':
             movie.romance = True
-            movie.action = False
+
         else:
-            print("输入错误请重新输入")
+            print("输入错误请重新输入！")
             return None
 
         return movie

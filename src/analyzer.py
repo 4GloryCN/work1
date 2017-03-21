@@ -14,11 +14,13 @@ class Analyzer():
         if self.flag == 'A':
             movie.action = True
             movie.romance = False
+            return movie
         elif self.flag == 'R':
             movie.romance = True
             movie.action = False
         else:
-            print("请输入正确的电影分类！（A or R）")
+            print("输入错误请重新输入")
+            return None
 
         return movie
 
@@ -29,6 +31,7 @@ class Analyzer():
     def analysis(self, content):
         print("数据分析中······\n")
 
+        content.remove(None)
         action_count = 0
         romance_count = 0
         action_sum = 0

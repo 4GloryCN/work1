@@ -1,27 +1,28 @@
-from movie import Movie
+from movie import *
+import json
 
 class Analyzer():
-    def __init__(self):
-        self.flag = ''
 
     def get_origin_data(self):
-        movie = Movie()
+        content = []
+        print('数据读取中······')
 
-        movie.action_time = int(input('请输入动作片断数目：'))
-        movie.romance_time = int(input('请输入爱情片段数目：'))
-        self.flag = input('请输入电影类别：（A or R）')
+        with open('./resource/movies.json') as f_obj:
+            data = json.load(f_obj)
 
-        if self.flag == 'A':
-            movie.action = True
+        for movies in data['movies']:
+            movie = Movie()
 
-        elif self.flag == 'R':
-            movie.romance = True
+            movie.action_time = movies['kicks']
+            movie.romance_time = movies['kisses']
+            if movies['type'] == 'Action':
+                movie.action = True
+            else:
+                movie.romance = True
 
-        else:
-            print("输入错误请重新输入！")
-            return None
+            content.append(movie)
 
-        return movie
+        return content
 
     def get_measured_data(self, movie):
         movie.action_time = int(input('请输入动作片断数目：'))
@@ -30,7 +31,6 @@ class Analyzer():
     def analysis(self, content):
         print("数据分析中······\n")
 
-        content.remove(None)
         action_count = 0
         romance_count = 0
         action_sum = 0

@@ -17,12 +17,3 @@ class User():
                 movie.make_info()
             else:
                 break
-
-    def startup(self, content, analyzer):
-        while True:
-            self.order = input(self.prompt2)
-            if self.order != '0':
-                content.append(analyzer.get_origin_data())
-            else:
-                break
-

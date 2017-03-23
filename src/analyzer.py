@@ -1,17 +1,15 @@
-from movie import *
 import json
 
 class Analyzer():
 
-    def get_measured_data(self, movie):
-        movie.action_time = int(input('请输入动作片断数目：'))
-        movie.romance_time = int(input('请输入爱情片段数目：'))
+    def judge(self, x, y):
+        action_time = int(input('请输入动作片断数目：'))
+        romance_time = int(input('请输入爱情片段数目：'))
 
-    def judge(self, movie, x, y):
-        if (movie.action_time - x) - (movie.romance_time - y) > 0:
-            movie.action = True
+        if (action_time - x) - (romance_time - y) > 0:
+            print("这是动作电影\n")
         else:
-            movie.romance = True
+            print("这是爱情电影\n")
 
     def analysis(self):
         print("数据分析中······\n")

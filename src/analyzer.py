@@ -24,10 +24,10 @@ class Analyzer():
 
         for movies in data['movies']:
             if movies['type'] == 'Action':
-                action_sum += (movies['kicks'] - movies['kisses'])
+                action_sum += movies['kicks']
                 action_count += 1
             else:
-                romance_sum += (movies['kisses'] - movies['kicks'])
+                romance_sum += movies['kisses']
                 romance_count += 1
 
         return action_sum/action_count, romance_sum/romance_count

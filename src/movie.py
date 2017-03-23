@@ -1,7 +1,6 @@
 class Movie():
 
     def __init__(self):
-        self.title = ''
         self.action = False
         self.romance = False
         self.action_time = 0

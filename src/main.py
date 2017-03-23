@@ -7,7 +7,6 @@ movie_0 = Movie()
 analyzer = Analyzer()
 user = User()
 
-content = analyzer.get_origin_data()
-x, y = analyzer.analysis(content)
+x, y = analyzer.analysis()
 user.measure(movie_0, analyzer, x, y)
 user.exit()

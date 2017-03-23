@@ -13,6 +13,7 @@ class Analyzer():
         for movies in data['movies']:
             movie = Movie()
 
+            movie.title = movies['title']
             movie.action_time = movies['kicks']
             movie.romance_time = movies['kisses']
             if movies['type'] == 'Action':
